@@ -1,0 +1,21 @@
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router';
+import store from './store';
+import vuetify from './plugins/vuetify';
+import './lodash';
+// import VeeValidate from 'vee-validate';
+
+Vue.config.productionTip = false
+
+if (localStorage.getItem('CHATBOT_USER')) {
+  const parsedSession = JSON.parse(localStorage.getItem('CHATBOT_USER'));
+  store.dispatch('createSession', parsedSession);
+}
+new Vue({
+  router,
+  store,
+  vuetify,
+  // VeeValidate,
+  render: h => h(App)
+}).$mount('#app')
