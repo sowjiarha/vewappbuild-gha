@@ -1,4 +1,4 @@
-iname: Build Vue.js Application
+name: Build Vue.js Application
 
 on:
   push:
